@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naveo · Aceleramos negocios digitales con IA</title>
+<meta name="description" content="Naveo es la agencia digital que acelera tu negocio con inteligencia artificial: tiendas eCommerce, aceleración comercial para empresas de servicios y funnels B2B.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bosque:#0B3D2E;
+    --abisal:#06291F;
+    --lima:#C6F24E;
+    --hueso:#F4F1E9;
+    --salvia:#9FB6AB;
+    --menta:#CFE3D8;
+    --verde:#0F9D63;
+    --card:#0F3A2C;
+    --card2:#12442F;
+    --borde:#1E5040;
+    --wa:#25D366;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--abisal);
+    color:var(--hueso);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.1;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .lima{color:var(--lima)}
+  .serif-it{font-style:italic;font-weight:500}
+
+  /* NAV */
+  header{position:sticky;top:0;z-index:50;background:rgba(6,41,31,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--borde)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .bars{display:flex;align-items:flex-end;gap:3px;height:26px}
+  .bars span{width:5px;border-radius:3px;display:block}
+  .bars span:nth-child(1){height:13px;background:var(--verde)}
+  .bars span:nth-child(2){height:19px;background:var(--salvia)}
+  .bars span:nth-child(3){height:26px;background:var(--lima)}
+  .rule{width:1px;height:28px;background:var(--borde)}
+  .brand-txt b{font-family:'Fraunces',serif;font-weight:700;font-size:20px;display:block;line-height:1}
+  .brand-txt small{font-size:9.5px;letter-spacing:.22em;color:var(--salvia);text-transform:uppercase}
+  nav.links{display:flex;align-items:center;gap:30px}
+  nav.links a{font-size:14.5px;color:var(--menta);font-weight:500;transition:color .2s}
+  nav.links a:hover{color:var(--hueso)}
+  .wa-pill{background:var(--lima);color:var(--abisal)!important;padding:10px 18px;border-radius:999px;font-weight:600;font-size:14px}
+  .wa-pill:hover{filter:brightness(1.05)}
+  .menu-btn{display:none;background:none;border:0;color:var(--hueso);font-size:26px;cursor:pointer}
+
+  /* HERO */
+  .hero{position:relative;padding:96px 0 88px;background:
+     radial-gradient(1100px 500px at 78% -8%, rgba(198,242,78,.10), transparent 60%),
+     radial-gradient(800px 600px at 8% 30%, rgba(15,157,99,.14), transparent 55%),
+     linear-gradient(180deg,var(--abisal),var(--bosque));}
+  .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--borde);background:rgba(198,242,78,.06);color:var(--menta);padding:7px 15px;border-radius:999px;font-size:13px;font-weight:500}
+  .pill .dot{width:7px;height:7px;border-radius:50%;background:var(--lima);box-shadow:0 0 0 3px rgba(198,242,78,.18)}
+  .hero h1{font-size:clamp(42px,7vw,78px);margin:26px 0 22px;max-width:14ch}
+  .hero .sub{font-size:clamp(17px,2vw,20px);color:var(--menta);max-width:60ch;margin-bottom:34px}
+  .btns{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .btn{padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;display:inline-flex;align-items:center;gap:9px;transition:transform .15s,filter .2s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-lima{background:var(--lima);color:var(--abisal)}
+  .btn-ghost{border:1px solid var(--borde);color:var(--hueso);background:rgba(255,255,255,.02)}
+  .microcopy{margin-top:20px;font-size:13.5px;color:var(--salvia)}
+  .hero-feats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:64px}
+  .feat{border:1px solid var(--borde);background:rgba(15,58,44,.5);border-radius:16px;padding:22px}
+  .feat .plus{color:var(--lima);font-family:'Fraunces',serif;font-size:26px;font-weight:700;line-height:1}
+  .feat p{margin-top:10px;font-size:15px;color:var(--menta);font-weight:500}
+
+  /* SECTIONS */
+  section{padding:88px 0}
+  .eyebrow{color:var(--lima);font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+  .sec-h{font-size:clamp(30px,4.5vw,46px);max-width:20ch;margin-bottom:16px}
+  .sec-lead{color:var(--menta);font-size:17.5px;max-width:64ch;margin-bottom:48px}
+
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{border:1px solid var(--borde);background:linear-gradient(180deg,var(--card),var(--card2));border-radius:20px;padding:30px}
+  .card .tag{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--salvia);font-weight:600;letter-spacing:.03em;margin-bottom:16px}
+  .card .tag .dot{width:7px;height:7px;border-radius:50%;background:var(--lima)}
+  .card h3{font-size:23px;margin-bottom:10px}
+  .card .desc{color:var(--menta);font-size:15px;margin-bottom:18px}
+  .card ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .card ul li{position:relative;padding-left:26px;font-size:14.5px;color:var(--hueso)}
+  .card ul li::before{content:"";position:absolute;left:0;top:8px;width:12px;height:12px;border-radius:50%;background:rgba(198,242,78,.14);box-shadow:inset 0 0 0 2px var(--lima)}
+
+  .band{background:linear-gradient(180deg,var(--bosque),var(--abisal))}
+
+  /* PROCESO */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .step{border:1px solid var(--borde);background:rgba(15,58,44,.4);border-radius:18px;padding:26px}
+  .step .n{font-family:'Fraunces',serif;font-weight:700;font-size:40px;color:var(--lima);line-height:1;opacity:.9}
+  .step h3{font-size:20px;margin:14px 0 8px}
+  .step p{color:var(--menta);font-size:14.5px}
+
+  /* IA */
+  .ia-wrap{border:1px solid var(--borde);background:
+     radial-gradient(600px 300px at 85% 0%, rgba(198,242,78,.10), transparent 60%),
+     linear-gradient(180deg,var(--card),var(--card2));border-radius:24px;padding:56px 48px;text-align:center}
+  .ia-wrap h2{font-size:clamp(28px,4vw,44px);max-width:24ch;margin:0 auto 18px}
+  .ia-wrap p{color:var(--menta);font-size:17.5px;max-width:70ch;margin:0 auto 30px}
+
+  /* CASOS */
+  .brands{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .brand-card{border:1px solid var(--borde);background:rgba(15,58,44,.45);border-radius:14px;padding:22px 20px;display:flex;align-items:center;justify-content:center;min-height:110px;transition:border-color .2s,transform .15s}
+  .brand-card:hover{border-color:var(--lima);transform:translateY(-2px)}
+  .brand-card img{max-width:100%;max-height:64px;width:auto;height:auto;object-fit:contain;opacity:.9;transition:opacity .2s}
+  .brand-card:hover img{opacity:1}
+
+  /* CTA FINAL */
+  .cta-final{text-align:center;background:
+     radial-gradient(700px 340px at 50% -10%, rgba(198,242,78,.12), transparent 60%),
+     linear-gradient(180deg,var(--abisal),var(--bosque))}
+  .cta-final h2{font-size:clamp(30px,5vw,52px);max-width:18ch;margin:0 auto 18px}
+  .cta-final p{color:var(--menta);font-size:18px;max-width:60ch;margin:0 auto 32px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--borde);background:var(--abisal);padding:52px 0 34px}
+  .foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px;margin-bottom:34px}
+  .foot-brand{max-width:34ch}
+  .foot-brand p{color:var(--salvia);font-size:14px;margin-top:14px}
+  .foot-cols{display:flex;gap:56px;flex-wrap:wrap}
+  .foot-cols h4{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--salvia);margin-bottom:14px;font-family:'Inter',sans-serif;font-weight:600}
+  .foot-cols a{display:block;color:var(--menta);font-size:14.5px;margin-bottom:9px}
+  .foot-cols a:hover{color:var(--hueso)}
+  .foot-bottom{border-top:1px solid var(--borde);padding-top:22px;color:var(--salvia);font-size:13px}
+
+  /* WHATSAPP FLOAT */
+  .wa-float{position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .18s}
+  .wa-float:hover{transform:scale(1.07)}
+  .wa-float svg{width:30px;height:30px;fill:#fff}
+
+  @media(max-width:900px){
+    .hero-feats,.grid3,.steps,.brands{grid-template-columns:1fr}
+    .steps{grid-template-columns:repeat(2,1fr)}
+    .brands{grid-template-columns:repeat(2,1fr)}
+    nav.links{display:none}
+    .menu-btn{display:block}
+    nav.links.open{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;gap:0;background:var(--abisal);border-bottom:1px solid var(--borde);padding:12px 24px}
+    nav.links.open a{padding:12px 0;width:100%}
+    .ia-wrap{padding:40px 24px}
+  }
+  @media(max-width:560px){
+    .steps,.brands{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body id="top">
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Naveo">
+      <span class="bars"><span></span><span></span><span></span></span>
+      <span class="rule"></span>
+      <span class="brand-txt"><b>Naveo</b><small>Agencia Digital</small></span>
+    </a>
+    <nav class="links" id="menu">
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Cómo trabajamos</a>
+      <a href="#casos">Casos</a>
+      <a href="#ia">Por qué IA</a>
+      <a class="wa-pill" href="https://wa.me/message/3XF2KCBUWO7LA1" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menú">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <span class="pill"><span class="dot"></span> Agencia digital potenciada con IA</span>
+    <h1>Tu negocio, <span class="lima serif-it">a otra velocidad.</span></h1>
+    <p class="sub">En Naveo diseñamos, automatizamos y aceleramos negocios con inteligencia artificial. Menos fricción, más ventas — y un equipo que rema con vos.</p>
+    <div class="btns">
+      <a class="btn btn-lima" href="https://wa.me/message/3XF2KCBUWO7LA1" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+      <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+    </div>
+    <p class="microcopy">Respondemos en el día · Diagnóstico inicial sin costo</p>
+
+    <div class="hero-feats">
+      <div class="feat"><span class="plus">+</span><p>Tiendas que venden, no solo que existen</p></div>
+      <div class="feat"><span class="plus">+</span><p>Automatización real, no humo</p></div>
+      <div class="feat"><span class="plus">+</span><p>Foco en resultados medibles</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- PARA QUIÉN -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Para quién</p>
+    <h2 class="sec-h">Pensado para tu tipo de negocio</h2>
+    <p class="sec-lead">Cada negocio crece distinto. Por eso adaptamos lo que hacemos a lo que vos vendés: productos, servicios o demanda — siempre rápido de implementar y fácil de medir.</p>
+    <div class="grid3">
+      <div class="card">
+        <span class="tag"><span class="dot"></span> Venta de productos</span>
+        <h3>Venta online para Pymes</h3>
+        <p class="desc">Convertimos tu catálogo en una máquina de vender que trabaja sola.</p>
+        <ul>
+          <li>Tienda online que vende 24/7, los 365 días</li>
+          <li>Atención y posventa automatizadas con IA</li>
+          <li>Más visitas calificadas a tu sitio</li>
+          <li>Optimización de tus ventas en MercadoLibre</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="tag"><span class="dot"></span> Venta de servicios</span>
+        <h3>Incrementar ventas de servicios</h3>
+        <p class="desc">Estudios jurídicos, contables, inmobiliarias, arquitectura y más: te llenamos la agenda.</p>
+        <ul>
+          <li>Web que agenda citas y reservas sola</li>
+          <li>Publicidad en Google y redes que trae consultas</li>
+          <li>IA que recomienda tus servicios al cliente indicado</li>
+          <li>Seguimiento automático hasta cerrar la venta</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="tag"><span class="dot"></span> Startups</span>
+        <h3>Necesitás generar demanda</h3>
+        <p class="desc">Startups y consultoras que tienen que crecer rápido y con datos.</p>
+        <ul>
+          <li>Motor de generación de leads</li>
+          <li>Funnels y campañas que generan demanda real</li>
+          <li>Mejora continua de tus tasas de conversión</li>
+          <li>Métricas y decisiones basadas en datos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="wrap">
+    <p class="eyebrow">Servicios</p>
+    <h2 class="sec-h">Tres motores para acelerar tu crecimiento</h2>
+    <p class="sec-lead">Cada motor pensado para acelerar tus ventas digitales con una mirada sistémica, buscando eficiencia y aceleración. Todo potenciado con IA.</p>
+    <div class="grid3">
+      <div class="card">
+        <h3>Canal Online</h3>
+        <p class="desc">Diseñamos y desarrollamos tu sitio de venta online pensado para convertir, con foco en brindar una experiencia de compra acorde a tu negocio y cumpliendo las buenas prácticas de la industria.</p>
+        <ul>
+          <li>Plataformas web &amp; eCommerce</li>
+          <li>UX que venden</li>
+          <li>Recomendador y búsqueda con IA</li>
+          <li>Integraciones de pago y logística</li>
+          <li>MercadoLibre</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Agentes IA + Automatizaciones</h3>
+        <p class="desc">Convertimos consultas en clientes con procesos comerciales automatizados.</p>
+        <ul>
+          <li>Captación y calificación de leads con IA</li>
+          <li>Respuesta automática 24/7 (chat y WhatsApp)</li>
+          <li>Atención antes, durante y post venta</li>
+          <li>Agenda y seguimiento sin que se enfríe nada</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Funnel Power</h3>
+        <p class="desc">Embudos de venta que generan demanda real y la convierten en reuniones con leads calificados.</p>
+        <ul>
+          <li>Estrategia de funnel y propuesta de valor</li>
+          <li>Landing y secuencias que convierten</li>
+          <li>Outbound y nurturing potenciado con IA</li>
+          <li>Reportes de pipeline y ROI</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section id="proceso" class="band">
+  <div class="wrap">
+    <p class="eyebrow">Cómo trabajamos</p>
+    <h2 class="sec-h">Un método claro para llegar más rápido</h2>
+    <p class="sec-lead">Sin vueltas: entendemos, construimos, medimos y escalamos.</p>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><h3>Diagnóstico</h3><p>Analizamos tu negocio, tus números y dónde está la oportunidad real de crecer.</p></div>
+      <div class="step"><div class="n">02</div><h3>Estrategia</h3><p>Definimos el plan, las palancas y dónde la IA suma más impacto.</p></div>
+      <div class="step"><div class="n">03</div><h3>Implementación</h3><p>Construimos, integramos y automatizamos. Salimos a la cancha rápido.</p></div>
+      <div class="step"><div class="n">04</div><h3>Optimización</h3><p>Medimos, iteramos y escalamos lo que funciona. Crecimiento sostenido.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUÉ IA -->
+<section id="ia">
+  <div class="wrap">
+    <div class="ia-wrap">
+      <p class="eyebrow" style="justify-content:center">Por qué IA</p>
+      <h2>La IA no reemplaza la estrategia. La acelera.</h2>
+      <p>Usamos inteligencia artificial donde de verdad mueve resultados: atención que nunca duerme, contenido a escala, leads mejor calificados y decisiones basadas en datos. Vos te enfocás en tu negocio; nosotros ponemos el turbo.</p>
+      <a class="btn btn-lima" href="#contacto">Quiero acelerar mi negocio</a>
+    </div>
+  </div>
+</section>
+
+<!-- CASOS -->
+<section id="casos" class="band">
+  <div class="wrap">
+    <p class="eyebrow">Casos de éxito</p>
+    <h2 class="sec-h">Marcas que ya crecen con Naveo</h2>
+    <p class="sec-lead">Pymes y startups de distintos rubros que confiaron en nosotros para acelerar su negocio.</p>
+    <div class="brands">
+      <div class="brand-card"><img src="logos/el-patio.png" alt="El Patio" loading="lazy"></div>
+      <div class="brand-card"><img src="logos/porca-troia.png" alt="Porca Troia" loading="lazy"></div>
+      <div class="brand-card"><img src="logos/limp10.png" alt="Limp10 · Domitec" loading="lazy"></div>
+      <div class="brand-card"><img src="logos/velazco.png" alt="Velazco Pinturas" loading="lazy"></div>
+      <div class="brand-card"><img src="logos/kraemer.png" alt="Kraemer Muebles" loading="lazy"></div>
+      <div class="brand-card"><img src="logos/mederi.png" alt="Mederi Productos Médicos" loading="lazy"></div>
+      <div class="brand-card"><img src="logos/almanza.png" alt="Almanza Contenedores" loading="lazy"></div>
+      <div class="brand-card"><img src="logos/rb-inmobiliaria.png" alt="RB Servicios Inmobiliarios" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="contacto" class="cta-final">
+  <div class="wrap">
+    <p class="eyebrow" style="text-align:center">Empecemos</p>
+    <h2>¿Listo para poner tu negocio a otra velocidad?</h2>
+    <p>Contanos qué querés lograr y te respondemos hoy con una primera idea. El diagnóstico inicial es gratis.</p>
+    <a class="btn btn-lima" href="https://wa.me/message/3XF2KCBUWO7LA1" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="#top">
+          <span class="bars"><span></span><span></span><span></span></span>
+          <span class="rule"></span>
+          <span class="brand-txt"><b>Naveo</b><small>Agencia Digital</small></span>
+        </a>
+        <p>Agencia digital que acelera negocios con inteligencia artificial.</p>
+      </div>
+      <div class="foot-cols">
+        <div>
+          <h4>Navegación</h4>
+          <a href="#servicios">Servicios</a>
+          <a href="#proceso">Cómo trabajamos</a>
+          <a href="#ia">Por qué IA</a>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <a href="#contacto">Hablar por WhatsApp</a>
+          <a href="mailto:hola@naveo.com.ar">hola@naveo.com.ar</a>
+          <a href="#top">naveo.com.ar</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 Naveo · Agencia Digital. Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/message/3XF2KCBUWO7LA1" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.06 24l1.68-6.13A11.87 11.87 0 010 11.9C0 5.34 5.36 0 11.93 0a11.86 11.86 0 018.42 3.49A11.82 11.82 0 0123.86 11.9c0 6.56-5.36 11.9-11.93 11.9a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2l.36.22a9.86 9.86 0 004.97 1.36c5.46 0 9.9-4.42 9.9-9.87a9.82 9.82 0 00-2.9-6.99A9.83 9.83 0 0011.93 2.03c-5.46 0-9.9 4.42-9.9 9.87 0 1.87.53 3.7 1.53 5.28l.24.38-1 3.63 3.8-1zm11.62-5.6c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.14-.14.3-.35.44-.53.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.48.71.31 1.26.49 1.69.63.71.22 1.35.19 1.86.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42z"/></svg>
+</a>
+
+<script>
+  var b=document.getElementById('menuBtn'),m=document.getElementById('menu');
+  b.addEventListener('click',function(){m.classList.toggle('open')});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open')})});
+</script>
+</body>
+</html>
