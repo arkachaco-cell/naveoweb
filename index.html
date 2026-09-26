@@ -84,6 +84,14 @@
   .sec-lead{color:var(--menta);font-size:17.5px;max-width:64ch;margin-bottom:48px}
 
   .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .grid4 .card{padding:26px;display:flex;flex-direction:column}
+  .grid4 .card h3{font-size:21px}
+  .card.destacada{border-color:var(--lima);box-shadow:0 0 0 1px rgba(198,242,78,.25),0 20px 40px -24px rgba(198,242,78,.35)}
+  .card .nuevo{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--abisal);background:var(--lima);border-radius:999px;padding:3px 9px;margin-left:6px}
+  .card .mas{margin-top:auto;padding-top:20px;color:var(--lima);font-weight:600;font-size:14.5px;text-decoration:none}
+  .card .mas:hover{text-decoration:underline}
+  @media(max-width:1180px){.grid4{grid-template-columns:repeat(2,1fr)}}
   .card{border:1px solid var(--borde);background:linear-gradient(180deg,var(--card),var(--card2));border-radius:20px;padding:30px}
   .card .tag{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--salvia);font-weight:600;letter-spacing:.03em;margin-bottom:16px}
   .card .tag .dot{width:7px;height:7px;border-radius:50%;background:var(--lima)}
@@ -140,7 +148,7 @@
   .wa-float svg{width:30px;height:30px;fill:#fff}
 
   @media(max-width:900px){
-    .hero-feats,.grid3,.steps,.brands{grid-template-columns:1fr}
+    .hero-feats,.grid3,.grid4,.steps,.brands{grid-template-columns:1fr}
     .steps{grid-template-columns:repeat(2,1fr)}
     .brands{grid-template-columns:repeat(2,1fr)}
     nav.links{display:none}
@@ -199,8 +207,8 @@
   <div class="wrap">
     <p class="eyebrow">Para quién</p>
     <h2 class="sec-h">Pensado para tu tipo de negocio</h2>
-    <p class="sec-lead">Cada negocio crece distinto. Por eso adaptamos lo que hacemos a lo que vos vendés: productos, servicios o demanda — siempre rápido de implementar y fácil de medir.</p>
-    <div class="grid3">
+    <p class="sec-lead">Cada negocio crece distinto. Por eso adaptamos lo que hacemos a lo que vos vendés y a cómo operás: productos, servicios, demanda o caja — siempre rápido de implementar y fácil de medir.</p>
+    <div class="grid4">
       <div class="card">
         <span class="tag"><span class="dot"></span> Venta de productos</span>
         <h3>Venta online para Pymes</h3>
@@ -234,6 +242,18 @@
           <li>Métricas y decisiones basadas en datos</li>
         </ul>
       </div>
+      <div class="card destacada">
+        <span class="tag"><span class="dot"></span> Agro y distribución</span>
+        <h3>Vendés a plazo y cobrás con cheques</h3>
+        <p class="desc">Fábricas, distribuidoras y comercios del agro que necesitan ordenar la caja y la cobranza.</p>
+        <ul>
+          <li>Caja proyectada con alertas antes de que falte plata</li>
+          <li>Cobranza priorizada, con responsables y promesas de pago</li>
+          <li>Cheques recibidos y emitidos bajo control</li>
+          <li>Chau planillas cruzadas: todo en un solo lugar</li>
+        </ul>
+        <a class="mas" href="https://torre.naveo.ar/#caso" target="_blank" rel="noopener">Ver el caso Nutrinea →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -242,9 +262,9 @@
 <section id="servicios">
   <div class="wrap">
     <p class="eyebrow">Servicios</p>
-    <h2 class="sec-h">Tres motores para acelerar tu crecimiento</h2>
+    <h2 class="sec-h">Cuatro motores para acelerar tu crecimiento</h2>
     <p class="sec-lead">Cada motor pensado para acelerar tus ventas digitales con una mirada sistémica, buscando eficiencia y aceleración. Todo potenciado con IA.</p>
-    <div class="grid3">
+    <div class="grid4">
       <div class="card">
         <h3>Canal Online</h3>
         <p class="desc">Diseñamos y desarrollamos tu sitio de venta online pensado para convertir, con foco en brindar una experiencia de compra acorde a tu negocio y cumpliendo las buenas prácticas de la industria.</p>
@@ -275,6 +295,18 @@
           <li>Outbound y nurturing potenciado con IA</li>
           <li>Reportes de pipeline y ROI</li>
         </ul>
+      </div>
+      <div class="card destacada">
+        <h3>Torre de Control <span class="nuevo">Nuevo</span></h3>
+        <p class="desc">Caja, cobranza y cheques de tu empresa en un solo lugar. No es un tablero para mirar: se carga ahí y se decide ahí.</p>
+        <ul>
+          <li>Radar de caja con alertas</li>
+          <li>Gestión de cobranza</li>
+          <li>Cheques recibidos y emitidos</li>
+          <li>Presupuestos, ventas y cuentas corrientes</li>
+          <li>70% núcleo probado + 30% a tu medida</li>
+        </ul>
+        <a class="mas" href="https://torre.naveo.ar" target="_blank" rel="noopener">Conocer la Torre →</a>
       </div>
     </div>
   </div>
