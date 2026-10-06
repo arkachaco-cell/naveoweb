@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Estudio Modelo · Familia y Sucesiones — Demo Naveo</title>
+<meta name="description" content="Plantilla de demostración para estudios de derecho de familia y sucesiones. Creada por Naveo.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Jost:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#FBF8F3;--tinta:#2B2A26;--tinta2:#6E6A61;--salvia:#5A6E5A;--salvia2:#44553F;--rosa:#A8705E;
+ --card:#fff;--linea:#E6E0D5;
+ --t:"Crimson Pro",Georgia,serif;--s:"Jost",system-ui,sans-serif;color-scheme:light}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tinta);font-family:var(--s);font-size:17px;line-height:1.7}
+.w{max-width:980px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--t);line-height:1.2;text-wrap:balance;font-weight:600}
+.demo-bar{position:sticky;top:0;z-index:99;display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  background:#06291F;color:#F4F1E9;padding:9px 20px;font-size:12.5px;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.4}
+.demo-tag{background:#C6F24E;color:#06291F;border-radius:999px;padding:3px 11px;font-weight:700;
+  font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;flex-shrink:0}
+.demo-txt{color:#CFE3D8;min-width:0}
+.demo-link{margin-left:auto;color:#C6F24E;font-weight:600;text-decoration:none;white-space:nowrap}
+.demo-link:hover{text-decoration:underline}
+@media(max-width:620px){.demo-link{margin-left:0}}
+header{padding-block:22px}
+header .w{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.marca{font-family:var(--t);font-size:24px;font-weight:600;color:var(--salvia2)}
+.marca small{display:block;font-family:var(--s);font-size:10px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--tinta2);font-weight:500;margin-top:3px}
+.cta-h{border:1px solid var(--salvia);color:var(--salvia2);padding:10px 20px;border-radius:999px;
+  text-decoration:none;font-size:15px;font-weight:500}
+.cta-h:hover{background:var(--salvia);color:#fff}
+.hero{padding-block:46px 56px;text-align:center}
+.hero h1{font-size:clamp(33px,5vw,52px);max-width:17ch;margin:0 auto}
+.hero h1 em{font-style:italic;color:var(--rosa)}
+.hero p{font-size:19.5px;color:var(--tinta2);margin:20px auto 0;max-width:54ch}
+.hero .bot{display:inline-block;margin-top:28px;background:var(--salvia2);color:#fff;padding:14px 30px;
+  border-radius:999px;text-decoration:none;font-weight:500;font-size:16.5px}
+.hero .fine{font-size:14.5px;color:var(--tinta2);margin-top:14px}
+.areas{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--linea);
+  border:1px solid var(--linea);border-radius:12px;overflow:hidden;margin-top:10px}
+@media(max-width:700px){.areas{grid-template-columns:1fr}}
+.area{background:var(--card);padding:28px 26px}
+.area h3{font-size:22px;color:var(--salvia2)}
+.area p{font-size:16px;color:var(--tinta2);margin-top:10px}
+.area ul{margin-top:13px;padding-left:18px}
+.area li{font-size:15.5px;color:var(--tinta2);margin-top:6px}
+section{padding-block:54px;border-top:1px solid var(--linea)}
+.et{font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--rosa)}
+section h2{font-size:clamp(27px,3.6vw,36px);margin-top:11px;color:var(--salvia2)}
+section .int{font-size:18px;color:var(--tinta2);margin-top:14px;max-width:60ch}
+.proceso{margin-top:34px;display:grid;gap:0;max-width:72ch}
+.et-paso{display:grid;grid-template-columns:70px 1fr;gap:20px;padding-block:22px;border-bottom:1px solid var(--linea);align-items:start}
+.et-paso .t{font-family:var(--t);font-size:17px;font-style:italic;color:var(--rosa);padding-top:3px}
+.et-paso b{display:block;font-family:var(--t);font-size:21px;color:var(--salvia2)}
+.et-paso span{font-size:16.5px;color:var(--tinta2)}
+.cita{margin-top:40px;border-left:3px solid var(--rosa);padding:6px 0 6px 26px;max-width:62ch}
+.cita p{font-family:var(--t);font-size:22px;font-style:italic;color:var(--salvia2);line-height:1.5}
+.faq{margin-top:28px;max-width:70ch}
+.faq details{border-bottom:1px solid var(--linea);padding-block:18px}
+.faq summary{font-family:var(--t);font-size:20px;cursor:pointer;color:var(--salvia2);list-style:none;font-weight:600}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"→";color:var(--rosa);margin-right:12px;display:inline-block;transition:.2s}
+.faq details[open] summary::before{transform:rotate(90deg)}
+.faq p{font-size:16.5px;color:var(--tinta2);margin-top:12px}
+.contacto{background:var(--salvia2);color:#fff;border-radius:14px;padding:40px 34px;margin-block:46px;text-align:center}
+.contacto h2{font-size:clamp(25px,3.4vw,33px);color:#fff}
+.contacto p{font-size:17px;color:#CBD6C7;margin-top:14px;max-width:48ch;margin-inline:auto}
+.contacto .bot{display:inline-block;margin-top:24px;background:#fff;color:var(--salvia2);padding:14px 30px;
+  border-radius:999px;text-decoration:none;font-weight:600}
+.contacto .dato{margin-top:18px;font-size:15px;color:#A9BAA5}
+footer{border-top:1px solid var(--linea);padding-block:28px;font-size:14.5px;color:var(--tinta2)}
+footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer b{color:var(--salvia2);font-family:var(--t);font-size:18px}
+</style>
+</head>
+<body>
+<div class="demo-bar">
+  <span class="demo-tag">Demostración</span>
+  <span class="demo-txt">Sitio de ejemplo creado por Naveo. El estudio y sus datos son ficticios.</span>
+  <a class="demo-link" href="/abogados/">Ver planes y precios</a>
+</div>
+<header><div class="w">
+  <div class="marca">Estudio Modelo<small>Familia y Sucesiones</small></div>
+  <a class="cta-h" href="#contacto">Pedir una entrevista</a>
+</div></header>
+
+<div class="w">
+  <div class="hero">
+    <h1>Hay temas que no se resuelven <em>con un formulario</em>.</h1>
+    <p>Divorcios, cuidado de los hijos, herencias. Procesos que tocan vínculos, no solo papeles. Nos tomamos el tiempo de escuchar antes de recomendar nada.</p>
+    <a class="bot" href="#contacto">Pedir una entrevista</a>
+    <p class="fine">Primera entrevista sin cargo · Presencial o por videollamada</p>
+  </div>
+
+  <div class="areas">
+    <div class="area">
+      <h3>Familia</h3>
+      <p>Cuando la relación cambia, conviene ordenar lo legal sin romper lo que queda.</p>
+      <ul><li>Divorcio por mutuo acuerdo o unilateral</li><li>Cuidado personal y régimen de comunicación</li><li>Alimentos: fijación, aumento y cobro</li><li>Convivencia y acuerdos patrimoniales</li></ul>
+    </div>
+    <div class="area">
+      <h3>Sucesiones</h3>
+      <p>Después de una pérdida, el trámite es lo último que querés manejar. Lo llevamos nosotros.</p>
+      <ul><li>Sucesión testamentaria y ab intestato</li><li>Declaratoria de herederos</li><li>Partición y adjudicación de bienes</li><li>Conflictos entre herederos</li></ul>
+    </div>
+  </div>
+</div>
+
+<section><div class="w">
+  <div class="et">Cómo trabajamos</div>
+  <h2>El proceso, contado sin vueltas</h2>
+  <p class="int">La mayoría de las consultas empiezan con la misma pregunta: cuánto va a tardar y cuánto va a costar. Te lo decimos en la primera entrevista, por escrito.</p>
+  <div class="proceso">
+    <div class="et-paso"><div class="t">Primera</div><div><b>Nos contás qué pasó</b><span>Una hora, sin cargo y sin compromiso. Escuchamos y te decimos qué caminos hay, incluso si alguno no nos incluye.</span></div></div>
+    <div class="et-paso"><div class="t">Semana 1</div><div><b>Presupuesto por escrito</b><span>Alcance, honorarios, gastos de justicia y plazos estimados. Sin letra chica ni costos que aparecen después.</span></div></div>
+    <div class="et-paso"><div class="t">Durante</div><div><b>Un solo interlocutor</b><span>Hablás siempre con el mismo abogado. Te avisamos cada movimiento, aunque sea para decirte que no hay novedades.</span></div></div>
+    <div class="et-paso"><div class="t">Siempre</div><div><b>Acuerdo antes que juicio</b><span>Cuando hay chicos de por medio, un acuerdo rápido suele valer más que una sentencia ganada dos años después.</span></div></div>
+  </div>
+
+  <div class="cita"><p>No podemos evitarte el momento difícil. Sí podemos evitarte que además sea un trámite confuso.</p></div>
+</div></section>
+
+<section><div class="w">
+  <div class="et">Preguntas frecuentes</div>
+  <h2>Lo que suelen preguntarnos</h2>
+  <div class="faq">
+    <details open><summary>¿Cuánto cuesta un divorcio?</summary><p>Depende de si hay acuerdo y de si hay bienes o hijos menores. Un divorcio de común acuerdo sin bienes es el escenario más simple y económico. En la primera entrevista te damos el número cerrado.</p></details>
+    <details><summary>Mi ex no quiere firmar nada. ¿Puedo divorciarme igual?</summary><p>Sí. Desde 2015 el divorcio puede pedirse de forma unilateral y no hace falta expresar causa ni que la otra parte preste conformidad.</p></details>
+    <details><summary>¿Cuánto tarda una sucesión?</summary><p>Entre 8 y 18 meses en la mayoría de los casos, según el juzgado y si hay acuerdo entre herederos. Si hay conflicto, el plazo se extiende bastante.</p></details>
+    <details><summary>¿Tengo que ir a tribunales?</summary><p>En general no. La mayoría de las presentaciones son digitales. Te avisamos con tiempo las pocas audiencias donde tu presencia es necesaria.</p></details>
+  </div>
+</div></section>
+
+<div class="w"><div class="contacto" id="contacto">
+  <h2>Contanos tu situación</h2>
+  <p>Una entrevista de una hora, sin cargo. Salís sabiendo qué opciones tenés, cuánto cuesta cada una y cuánto tarda.</p>
+  <a class="bot" href="#">Pedir una entrevista</a>
+  <p class="dato">Atención presencial y por videollamada · Lunes a viernes de 9 a 18</p>
+</div></div>
+
+<footer><div class="w">
+  <div><b>Estudio Modelo</b> · Familia y Sucesiones · Ejemplo de sitio</div>
+  <div>Plantilla creada por Naveo · <a href="/abogados/" style="color:var(--salvia2)">naveo.ar/abogados</a></div>
+</div></footer>
+</body></html>

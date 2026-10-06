@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Estudio Modelo · Ciudadanías y Migraciones — Demo Naveo</title>
+<meta name="description" content="Plantilla de demostración para estudios de ciudadanía europea y migraciones. Creada por Naveo.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Karla:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#FAF6EF;--tinta:#2A2418;--tinta2:#6A5F4C;--oliva:#4A5A32;--oliva2:#374425;--terra:#B5603A;
+ --card:#fff;--linea:#E3DBCA;
+ --t:"Playfair Display",Georgia,serif;--s:"Karla",system-ui,sans-serif;color-scheme:light}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tinta);font-family:var(--s);font-size:17px;line-height:1.65}
+.w{max-width:1060px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--t);line-height:1.15;text-wrap:balance}
+.demo-bar{position:sticky;top:0;z-index:99;display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  background:#06291F;color:#F4F1E9;padding:9px 20px;font-size:12.5px;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.4}
+.demo-tag{background:#C6F24E;color:#06291F;border-radius:999px;padding:3px 11px;font-weight:700;
+  font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;flex-shrink:0}
+.demo-txt{color:#CFE3D8;min-width:0}
+.demo-link{margin-left:auto;color:#C6F24E;font-weight:600;text-decoration:none;white-space:nowrap}
+.demo-link:hover{text-decoration:underline}
+@media(max-width:620px){.demo-link{margin-left:0}}
+header{padding-block:20px;border-bottom:1px solid var(--linea)}
+header .w{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.marca{font-family:var(--t);font-size:23px;font-weight:700;color:var(--oliva)}
+.marca small{display:block;font-family:var(--s);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--tinta2);font-weight:600;margin-top:2px}
+.cta-h{background:var(--oliva);color:#fff;padding:11px 20px;border-radius:5px;text-decoration:none;font-weight:600;font-size:15.5px}
+.hero{padding-block:54px}
+.hero-g{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+@media(max-width:880px){.hero-g{grid-template-columns:1fr;gap:34px}}
+.hero h1{font-size:clamp(34px,5vw,52px)}
+.hero h1 em{font-style:italic;color:var(--terra)}
+.hero p{font-size:19px;color:var(--tinta2);margin-top:18px;max-width:40ch}
+.sellos{display:flex;gap:22px;margin-top:26px;flex-wrap:wrap}
+.sello b{display:block;font-family:var(--t);font-size:28px;color:var(--oliva)}
+.sello span{font-size:14px;color:var(--tinta2)}
+/* test */
+.test{background:var(--card);border:1px solid var(--linea);border-radius:12px;padding:30px 28px;
+  box-shadow:0 8px 28px rgba(60,50,30,.07)}
+.test .cab{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:6px}
+.test h2{font-size:23px;color:var(--oliva)}
+.paso-n{font-size:13px;color:var(--tinta2);font-weight:600}
+.test .sub{font-size:15px;color:var(--tinta2);margin-bottom:20px}
+.progreso{height:4px;background:var(--linea);border-radius:999px;overflow:hidden;margin-bottom:22px}
+.progreso i{display:block;height:100%;background:var(--terra);width:33%;transition:width .3s}
+fieldset{border:none}
+legend{font-weight:700;font-size:17.5px;margin-bottom:13px}
+.ops{display:grid;gap:9px}
+.op{border:1px solid var(--linea);border-radius:8px;padding:13px 15px;cursor:pointer;background:#fff;
+  font-size:16px;text-align:left;font-family:var(--s);color:var(--tinta);transition:.15s}
+.op:hover{border-color:var(--oliva);background:#F7F9F3}
+.nav-t{display:flex;justify-content:space-between;margin-top:20px;gap:10px}
+.volver{background:none;border:none;color:var(--tinta2);font-size:15px;cursor:pointer;font-family:var(--s);
+  text-decoration:underline}
+.resultado{text-align:left}
+.resultado .tit{font-family:var(--t);font-size:25px;color:var(--oliva);margin-bottom:11px}
+.resultado p{font-size:16.5px;color:var(--tinta2)}
+.resultado .bot{display:inline-block;margin-top:20px;background:var(--terra);color:#fff;padding:14px 26px;
+  border-radius:6px;text-decoration:none;font-weight:700}
+.nota{font-size:13.5px;color:var(--tinta2);margin-top:16px;line-height:1.5}
+section{padding-block:52px;border-top:1px solid var(--linea)}
+.et{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--terra)}
+section h2{font-size:clamp(26px,3.6vw,36px);margin-top:10px;color:var(--oliva)}
+section .int{font-size:18px;color:var(--tinta2);margin-top:12px;max-width:62ch}
+.docs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+@media(max-width:820px){.docs{grid-template-columns:1fr}}
+.doc{background:var(--card);border:1px solid var(--linea);border-radius:10px;padding:23px}
+.doc h3{font-size:19px;color:var(--oliva)}
+.doc ul{margin-top:11px;padding-left:19px}
+.doc li{font-size:15.5px;color:var(--tinta2);margin-top:7px}
+.plazos{margin-top:30px;border-left:2px solid var(--linea);padding-left:24px;max-width:66ch}
+.plazo{padding-block:15px;position:relative}
+.plazo::before{content:"";position:absolute;left:-30px;top:22px;width:11px;height:11px;border-radius:50%;
+  background:var(--terra)}
+.plazo b{font-family:var(--t);font-size:19px;color:var(--oliva);display:block}
+.plazo span{font-size:16px;color:var(--tinta2)}
+footer{background:var(--oliva2);color:#C5CFB4;padding-block:32px;font-size:15px}
+footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer b{color:#fff;font-family:var(--t);font-size:19px}
+</style>
+</head>
+<body>
+<div class="demo-bar">
+  <span class="demo-tag">Demostración</span>
+  <span class="demo-txt">Sitio de ejemplo creado por Naveo. El estudio y sus datos son ficticios.</span>
+  <a class="demo-link" href="/abogados/">Ver planes y precios</a>
+</div>
+<header><div class="w">
+  <div class="marca">Estudio Modelo<small>Ciudadanías y Migraciones</small></div>
+  <a class="cta-h" href="#test">Ver si calificás</a>
+</div></header>
+
+<div class="w"><div class="hero"><div class="hero-g">
+  <div>
+    <h1>Tu bisabuelo te dejó algo más que <em>el apellido</em>.</h1>
+    <p>Si tenés un antepasado italiano o español, probablemente tengas derecho a la ciudadanía. En dos minutos te decimos si calificás y qué documentación vas a necesitar.</p>
+    <div class="sellos">
+      <div class="sello"><b>Italia</b><span>Vía judicial y consular</span></div>
+      <div class="sello"><b>España</b><span>Ley de Nietos y por residencia</span></div>
+      <div class="sello"><b>+1.200</b><span>Expedientes tramitados</span></div>
+    </div>
+  </div>
+
+  <div class="test" id="test">
+    <div class="cab"><h2>¿Calificás?</h2><span class="paso-n" id="pn">Paso 1 de 3</span></div>
+    <p class="sub">Respondé tres preguntas. Sin dejar datos personales.</p>
+    <div class="progreso"><i id="barra"></i></div>
+    <div id="pantalla"></div>
+    <p class="nota">Resultado orientativo. Cada caso depende de fechas, naturalizaciones y actas, que revisamos en la consulta.</p>
+  </div>
+</div></div></div>
+
+<section><div class="w">
+  <div class="et">Documentación</div>
+  <h2>Lo que vas a necesitar</h2>
+  <p class="int">La mayoría de los trámites se traba por un acta mal pedida. Te armamos la lista exacta según tu línea de descendencia.</p>
+  <div class="docs">
+    <div class="doc"><h3>De tu antepasado</h3><ul><li>Acta de nacimiento del país de origen</li><li>Acta de matrimonio</li><li>Acta de defunción, si falleció</li><li>Certificado de no naturalización</li></ul></div>
+    <div class="doc"><h3>De la línea intermedia</h3><ul><li>Actas de nacimiento de cada descendiente</li><li>Actas de matrimonio</li><li>Todas legalizadas con apostilla</li></ul></div>
+    <div class="doc"><h3>Tuya</h3><ul><li>Acta de nacimiento actualizada</li><li>DNI y pasaporte vigente</li><li>Acta de matrimonio o divorcio, si corresponde</li></ul></div>
+  </div>
+</div></section>
+
+<section><div class="w">
+  <div class="et">Plazos reales</div>
+  <h2>Cuánto tarda, sin promesas infladas</h2>
+  <div class="plazos">
+    <div class="plazo"><b>Mes 1 a 3</b><span>Relevamiento de la línea de descendencia y pedido de actas en Argentina y en el exterior.</span></div>
+    <div class="plazo"><b>Mes 3 a 8</b><span>Legalizaciones, apostillas y traducciones oficiales. Es la etapa más lenta y la que menos depende de nosotros.</span></div>
+    <div class="plazo"><b>Mes 8 en adelante</b><span>Presentación. Por vía judicial en Italia el fallo suele llegar entre 12 y 24 meses; por consulado, los turnos marcan el ritmo.</span></div>
+  </div>
+</div></section>
+
+<footer><div class="w">
+  <div><b>Estudio Modelo</b><br>Ciudadanías y Migraciones · Ejemplo de sitio</div>
+  <div>Plantilla creada por Naveo · <a href="/abogados/" style="color:#C6F24E">naveo.ar/abogados</a></div>
+</div></footer>
+
+<script>
+var P=[
+ {q:"¿De qué país era tu antepasado?",o:["Italia","España","Otro país europeo","No estoy seguro"]},
+ {q:"¿Qué parentesco tenés con esa persona?",o:["Padre o madre","Abuelo o abuela","Bisabuelo o bisabuela","Más lejano"]},
+ {q:"¿Tenés las actas de nacimiento de la línea?",o:["Sí, todas","Algunas","Ninguna todavía"]}
+];
+var i=0, r=[];
+function pintar(){
+  var c=document.getElementById('pantalla');
+  document.getElementById('barra').style.width=((i)/P.length*100+33)+'%';
+  if(i<P.length){
+    document.getElementById('pn').textContent='Paso '+(i+1)+' de '+P.length;
+    var h='<fieldset><legend>'+P[i].q+'</legend><div class="ops">';
+    P[i].o.forEach(function(o,k){h+='<button class="op" data-k="'+k+'">'+o+'</button>';});
+    h+='</div></fieldset>'+(i>0?'<div class="nav-t"><button class="volver" id="atras">Volver</button></div>':'');
+    c.innerHTML=h;
+    c.querySelectorAll('.op').forEach(function(b){b.onclick=function(){r[i]=+b.dataset.k;i++;pintar();};});
+    var a=document.getElementById('atras'); if(a)a.onclick=function(){i--;pintar();};
+  } else {
+    document.getElementById('pn').textContent='Resultado';
+    var lejano = r[1]===3, sinDocs = r[2]===2, noSabe = r[0]===3;
+    var tit, txt;
+    if(lejano){ tit="Hay que revisarlo en detalle";
+      txt="Con un vínculo más lejano que bisabuelo, la vía depende de las fechas y de si hubo naturalización. Es analizable, pero necesitamos ver la línea completa."; }
+    else if(noSabe){ tit="Primero identifiquemos el origen";
+      txt="Sin saber el país no podemos orientarte. En la consulta reconstruimos la línea con los datos que tengas, aunque sean pocos."; }
+    else { tit="Todo indica que calificás";
+      txt="El parentesco que marcaste habilita el trámite en la mayoría de los casos."+(sinDocs?" Que no tengas las actas no es un problema: parte de nuestro trabajo es conseguirlas.":" Tener las actas te ahorra meses de trámite."); }
+    document.getElementById('pantalla').innerHTML=
+      '<div class="resultado"><div class="tit">'+tit+'</div><p>'+txt+'</p>'+
+      '<a class="bot" href="#">Agendar consulta sin cargo</a></div>';
+  }
+}
+pintar();
+</script>
+</body></html>
