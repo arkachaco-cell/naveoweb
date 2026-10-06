@@ -96,6 +96,28 @@ section{padding-block:60px;border-bottom:1px solid var(--linea)}
 .precio-impl .et{font-size:12.5px;color:var(--muted);margin-top:6px;letter-spacing:.04em;text-transform:uppercase}
 .precio-impl .cond{font-size:14px;color:var(--fg-2);max-width:50ch;min-width:0}
 
+
+/* plantillas */
+.plantillas{display:flex;flex-direction:column;gap:0;margin-top:34px}
+.pl{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:center;padding-block:36px;
+  border-top:1px solid var(--linea)}
+.pl:nth-child(even) .pl-img{order:2}
+@media(max-width:860px){.pl{grid-template-columns:1fr;gap:22px}.pl:nth-child(even) .pl-img{order:0}}
+.pl-img{border:1px solid var(--linea);border-radius:10px;overflow:hidden;background:var(--surface-2);
+  line-height:0;min-width:0}
+.pl-img img{width:100%;height:auto;display:block}
+.pl-txt{min-width:0}
+.pl-obj{font-size:10.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--lima)}
+.pl-txt h3{font-size:26px;margin-top:9px;font-weight:600}
+.pl-vert{font-size:13px;color:var(--muted);margin-top:5px}
+.pl-caso{font-size:15px;color:var(--fg-2);margin-top:14px}
+.pl-mec{margin-top:15px;padding-top:13px;border-top:1px solid var(--linea);font-size:13.5px;color:var(--muted)}
+.pl-mec b{color:var(--fg);font-weight:600}
+.pl-ver{display:inline-block;margin-top:16px;font-size:14.5px;color:var(--lima);font-weight:600;text-decoration:none}
+.pl-ver:hover{text-decoration:underline}
+.pl-mas{border-top:1px solid var(--linea);padding-top:26px;margin-top:8px;font-size:14.5px;color:var(--muted)}
+.pl-mas b{color:var(--fg-2);font-weight:600}
+
 /* planes */
 .planes{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;align-items:stretch}
 @media(max-width:920px){.planes{grid-template-columns:repeat(2,1fr)}}
@@ -211,6 +233,72 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
   </div>
 </section>
 
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">Las plantillas</div>
+    <h2>Cada una resuelve un problema distinto.</h2>
+    <p>No son cinco versiones del mismo diseño con otro color. Cambia la estructura, el recorrido y lo que se le pide al visitante, porque no es lo mismo captar un accidente que acompañar una sucesión. Entrá a verlas funcionando.</p>
+  </div>
+  <div class="plantillas">
+    <div class="pl">
+      <a class="pl-img" href="/abogados/demos/previsional"><img src="/abogados/demos/thumbs/previsional.jpg" width="760" height="466" loading="lazy" alt="Vista de la plantilla Previsional"></a>
+      <div class="pl-txt">
+        <div class="pl-obj">Captar consultas de alto volumen</div>
+        <h3>Previsional</h3>
+        <div class="pl-vert">Reajustes jubilatorios · ANSES</div>
+        <p class="pl-caso">El estudio recibe decenas de llamados por semana y la mayoría no prospera. El problema no es la falta de consultas: es el tiempo que se va atendiendo casos que no corresponden. El formulario del hero pide tres datos y descarta solo. Tipografía grande y lenguaje sin tecnicismos, porque quien consulta tiene más de 65 años.</p>
+        <div class="pl-mec">Mecanismo de conversión: <b>formulario de pre-calificación en el hero</b></div>
+        <a class="pl-ver" href="/abogados/demos/previsional">Ver la plantilla en vivo →</a>
+      </div>
+    </div>
+    <div class="pl">
+      <a class="pl-img" href="/abogados/demos/accidentes"><img src="/abogados/demos/thumbs/accidentes.jpg" width="760" height="466" loading="lazy" alt="Vista de la plantilla Accidentes y daños"></a>
+      <div class="pl-txt">
+        <div class="pl-obj">Capturar urgencias</div>
+        <h3>Accidentes y daños</h3>
+        <div class="pl-vert">Tránsito · Lesiones · ART</div>
+        <p class="pl-caso">Acá se compite por minutos. La persona busca desde el celular, a veces desde la guardia del hospital, y llama al primero que le inspira confianza. El teléfono va fijo arriba de la pantalla y nunca se va. Debajo, un checklist de qué hacer en las primeras 48 horas: le resuelve algo antes de pedirle nada.</p>
+        <div class="pl-mec">Mecanismo de conversión: <b>click-to-call fijo + checklist de primeras 48 horas</b></div>
+        <a class="pl-ver" href="/abogados/demos/accidentes">Ver la plantilla en vivo →</a>
+      </div>
+    </div>
+    <div class="pl">
+      <a class="pl-img" href="/abogados/demos/ciudadanias"><img src="/abogados/demos/thumbs/ciudadanias.jpg" width="760" height="466" loading="lazy" alt="Vista de la plantilla Ciudadanías"></a>
+      <div class="pl-txt">
+        <div class="pl-obj">Calificar antes de la consulta</div>
+        <h3>Ciudadanías</h3>
+        <div class="pl-vert">Italia · España · Migraciones</div>
+        <p class="pl-caso">El estudio pierde horas explicándole a gente que no califica por qué no califica. El test de tres pasos hace ese trabajo: el visitante se autoevalúa, entiende su situación y llega a la reunión sabiendo qué tiene y qué le falta. Los que no califican se van solos, sin ocupar una agenda.</p>
+        <div class="pl-mec">Mecanismo de conversión: <b>test de elegibilidad en 3 pasos</b></div>
+        <a class="pl-ver" href="/abogados/demos/ciudadanias">Ver la plantilla en vivo →</a>
+      </div>
+    </div>
+    <div class="pl">
+      <a class="pl-img" href="/abogados/demos/laboral"><img src="/abogados/demos/thumbs/laboral.jpg" width="760" height="466" loading="lazy" alt="Vista de la plantilla Laboral"></a>
+      <div class="pl-txt">
+        <div class="pl-obj">Convertir con una herramienta</div>
+        <h3>Laboral</h3>
+        <div class="pl-vert">Despidos · Trabajo no registrado</div>
+        <p class="pl-caso">Al recién despedido le ofrecieron una cifra y no sabe si está bien. La calculadora le da un número concreto aplicando los artículos 232, 233 y 245 de la LCT. Cuando ve la diferencia entre lo que le ofrecen y lo que corresponde, la consulta se vuelve inevitable. Esa diferencia es el argumento de venta.</p>
+        <div class="pl-mec">Mecanismo de conversión: <b>calculadora de indemnización</b></div>
+        <a class="pl-ver" href="/abogados/demos/laboral">Ver la plantilla en vivo →</a>
+      </div>
+    </div>
+    <div class="pl">
+      <a class="pl-img" href="/abogados/demos/familia"><img src="/abogados/demos/thumbs/familia.jpg" width="760" height="466" loading="lazy" alt="Vista de la plantilla Familia y sucesiones"></a>
+      <div class="pl-txt">
+        <div class="pl-obj">Transmitir confianza</div>
+        <h3>Familia y sucesiones</h3>
+        <div class="pl-vert">Divorcios · Herencias · Alimentos</div>
+        <p class="pl-caso">Acá la urgencia espanta. Nadie quiere que le metan presión mientras se está divorciando o acaba de perder a un familiar. Sin contadores, sin botones rojos, sin consulta gratis en letras grandes. El proceso explicado paso a paso y los honorarios dichos de entrada, que es lo que la gente realmente teme preguntar.</p>
+        <div class="pl-mec">Mecanismo de conversión: <b>proceso y honorarios explicados por adelantado</b></div>
+        <a class="pl-ver" href="/abogados/demos/familia">Ver la plantilla en vivo →</a>
+      </div>
+    </div>
+    <p class="pl-mas"><b>En preparación:</b> corporativo para vender a empresas, penal con disponibilidad 24 horas, multi-fuero para estudios con varias áreas, marca personal del socio y boutique por recomendación. Si ninguna de las cinco va con tu estudio, lo charlamos en la llamada.</p>
+  </div>
+</section>
 <section>
   <div class="sec-head">
     <div class="eyebrow">Planes mensuales</div>
