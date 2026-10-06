@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Sitio web profesional para estudios jurídicos en 15 días, y una mejora por mes sobre él, elegida mirando el comportamiento real de las visitas. Implementación $290.000 y planes desde $50.000 por mes.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://naveo.ar/abogados/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Naveo">
+<meta property="og:url" content="https://naveo.ar/abogados/">
+<meta property="og:title" content="Naveo para Estudios Jurídicos">
+<meta property="og:description" content="Un sitio profesional en 15 días y una mejora por mes sobre él, elegida con datos reales de comportamiento. Planes desde $50.000 por mes.">
+<meta property="og:image" content="https://naveo.ar/abogados/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#06291F">
+<link rel="icon" href="/favicon.ico">
+<title>Naveo para Estudios Jurídicos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Identidad Naveo (naveo.ar): verde profundo, crema, acento lima. Single-theme por marca.
+   Layout: columna editorial 1100px; la escalera de planes en grilla de 4 es la pieza central. */
+:root{\n  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);\n  --bg:#06291F; --surface:#0F3A2C; --surface-2:#0B3327; --linea:#1E5040;
+  --fg:#F4F1E9; --fg-2:#CFE3D8; --muted:#9FB6AB;
+  --lima:#C6F24E; --verde:#0F9D63;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --texto:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--texto);font-size:16px;line-height:1.6;
+  margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0;line-height:1.1}
+p{margin:0}
+.num{font-variant-numeric:tabular-nums}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--lima)}
+.lede{color:var(--fg-2);max-width:60ch}
+a{color:inherit}
+
+/* marca */
+.topbar{border-bottom:1px solid var(--linea)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:17px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.bars{display:flex;align-items:flex-end;gap:3px;height:26px}
+.bars i{display:block;width:5px;border-radius:3px}
+.bars i:nth-child(1){height:13px;background:var(--verde)}
+.bars i:nth-child(2){height:19px;background:var(--muted)}
+.bars i:nth-child(3){height:26px;background:var(--lima)}
+.rule{width:1px;height:28px;background:var(--linea)}
+.brand-txt b{display:block;font-family:var(--display);font-size:20px;font-weight:700;color:var(--fg);line-height:1.1}
+.brand-txt small{display:block;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:1px}
+.topbar .para{font-size:13px;color:var(--muted)}
+
+/* hero */
+.hero{padding-block:68px 56px;border-bottom:1px solid var(--linea)}
+.hero-grid{display:grid;grid-template-columns:1.3fr .95fr;gap:52px;align-items:center}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:34px}}
+.hero h1{font-size:clamp(36px,5.6vw,62px);letter-spacing:-.01em;margin-top:18px;max-width:14ch}
+.hero h1 em{display:block;font-style:italic;color:var(--lima);font-weight:600}
+.hero .lede{margin-top:22px;font-size:18px}
+.firma{margin-top:22px;font-size:13.5px;color:var(--muted)}
+.panel{background:var(--surface);border:1px solid var(--linea);border-radius:14px;padding:26px 24px}
+.panel .ph{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  padding-bottom:14px;border-bottom:1px solid var(--linea)}
+.panel ol{list-style:none;margin:0;padding:0;counter-reset:s}
+.panel li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:14px;padding-block:16px;
+  border-bottom:1px solid var(--linea)}
+.panel li:last-child{border-bottom:none;padding-bottom:4px}
+.panel li::before{content:"0" counter(s);font-family:var(--display);font-size:26px;font-weight:700;color:var(--lima);line-height:1}
+.panel strong{display:block;font-size:14.5px;font-weight:600;color:var(--fg)}
+.panel span{font-size:13.5px;color:var(--fg-2)}
+
+/* secciones */
+section{padding-block:60px;border-bottom:1px solid var(--linea)}
+.sec-head{max-width:64ch;margin-bottom:34px}
+.sec-head h2{font-size:clamp(26px,3.5vw,38px);letter-spacing:-.01em;margin-top:12px}
+.sec-head p{margin-top:15px;color:var(--fg-2)}
+
+/* implementación */
+.pasos{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:860px){.pasos{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.pasos{grid-template-columns:1fr}}
+.paso{background:var(--surface-2);border:1px solid var(--linea);border-radius:12px;padding:20px 18px;min-width:0}
+.paso .n{font-family:var(--display);font-size:13px;font-weight:700;color:var(--lima);letter-spacing:.06em}
+.paso h3{font-size:16.5px;margin-top:9px;font-weight:600}
+.paso p{font-size:13.5px;color:var(--fg-2);margin-top:8px}
+.precio-impl{margin-top:22px;display:flex;flex-wrap:wrap;gap:14px 34px;align-items:center;
+  background:var(--surface);border:1px solid var(--linea);border-radius:12px;padding:24px}
+.precio-impl .big{font-family:var(--display);font-size:38px;font-weight:700;color:var(--lima);letter-spacing:-.02em;line-height:1}
+.precio-impl .et{font-size:12.5px;color:var(--muted);margin-top:6px;letter-spacing:.04em;text-transform:uppercase}
+.precio-impl .cond{font-size:14px;color:var(--fg-2);max-width:50ch;min-width:0}
+
+/* planes */
+.planes{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;align-items:stretch}
+@media(max-width:920px){.planes{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.planes{grid-template-columns:1fr}}
+.plan{background:var(--surface-2);border:1px solid var(--linea);border-radius:14px;padding:22px 20px;
+  display:flex;flex-direction:column;gap:15px;min-width:0}
+.plan.destacado{background:var(--surface);border:1px solid var(--lima)}
+.plan .tag{font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);min-height:14px}
+.plan.destacado .tag{color:var(--lima)}
+.plan h3{font-size:24px;font-weight:600;margin-top:7px}
+.plan .precio{font-family:var(--display);font-size:31px;font-weight:700;color:var(--lima);letter-spacing:-.02em;line-height:1}
+.plan .periodo{font-size:12.5px;color:var(--muted);margin-top:6px}
+.plan .mejoras{font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--fg);
+  border-block:1px solid var(--linea);padding-block:11px}
+.plan ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;flex:1}
+.plan li{font-size:13.5px;color:var(--fg-2);padding-left:18px;position:relative;line-height:1.45}
+.plan li::before{content:"";position:absolute;left:0;top:7px;width:7px;height:7px;border-radius:50%;background:var(--lima)}
+.plan li.no{color:var(--muted);opacity:.7}
+.plan li.no::before{background:none;border:1px solid var(--linea)}
+.nota-precios{margin-top:22px;font-size:13.5px;color:var(--muted);max-width:76ch}
+
+/* medición */
+.medicion{display:grid;grid-template-columns:1.05fr .95fr;gap:42px}
+@media(max-width:860px){.medicion{grid-template-columns:1fr;gap:32px}}
+.protocolo{list-style:none;padding:0;margin:0;counter-reset:p}
+.protocolo li{counter-increment:p;display:grid;grid-template-columns:28px 1fr;gap:15px;
+  padding-block:16px;border-bottom:1px solid var(--linea)}
+.protocolo li:first-child{padding-top:0}
+.protocolo li::before{content:counter(p);font-family:var(--display);font-size:16px;font-weight:700;color:var(--lima)}
+.protocolo strong{display:block;font-size:14.5px;font-weight:600;color:var(--fg)}
+.protocolo span{font-size:13.5px;color:var(--fg-2)}
+.nopro{background:var(--lima);color:#06291F;border-radius:14px;padding:28px 26px;align-self:start}
+.nopro h3{font-family:var(--display);font-size:22px;font-weight:600;color:#06291F}
+.nopro p{font-size:14px;margin-top:14px;color:#0B3327;line-height:1.55}
+.nopro .lim{display:inline-block;margin-top:18px;font-size:11px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:#06291F;border-top:1px solid rgba(6,41,31,.28);padding-top:12px}
+
+/* perfiles */
+.perfiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:860px){.perfiles{grid-template-columns:1fr}}
+.perfil{border:1px solid var(--linea);border-radius:12px;padding:21px;background:var(--surface-2);min-width:0}
+.perfil .rec{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--lima)}
+.perfil h3{font-size:17.5px;margin-top:10px;font-weight:600}
+.perfil p{font-size:13.5px;color:var(--fg-2);margin-top:10px}
+
+/* cierre */
+.cierre{border-bottom:none;padding-block:60px 74px}
+.cierre-box{background:var(--surface);border:1px solid var(--linea);border-radius:16px;padding:40px 36px;
+  display:grid;grid-template-columns:1.25fr auto;gap:34px;align-items:center}
+@media(max-width:800px){.cierre-box{grid-template-columns:1fr;gap:26px;padding:30px 22px}}
+.cierre-box h2{font-size:clamp(25px,3.2vw,34px);letter-spacing:-.01em}
+.cierre-box h2 em{font-style:italic;color:var(--lima)}
+.cierre-box p{margin-top:14px;color:var(--fg-2);font-size:15.5px;max-width:50ch}
+.contacto{display:flex;flex-direction:column;gap:11px;min-width:0}
+.pill{display:inline-flex;align-items:center;justify-content:center;background:var(--lima);color:#06291F;
+  border-radius:999px;padding:12px 22px;font-weight:600;font-size:15px;text-decoration:none}
+.dato{background:var(--surface-2);border:1px solid var(--linea);border-radius:10px;padding:12px 16px}
+.dato .et{font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.dato .val{font-family:var(--display);font-size:17px;font-weight:600;color:var(--fg);margin-top:4px;
+  user-select:all;word-break:break-word}
+footer{border-top:1px solid var(--linea);padding-block:24px;font-size:12.5px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a class="brand" href="https://naveo.ar">
+    <span class="bars"><i></i><i></i><i></i></span>
+    <span class="rule"></span>
+    <span class="brand-txt"><b>Naveo</b><small>Agencia Digital</small></span>
+  </a>
+  <div class="para">Sitios y mejora continua para estudios jurídicos</div>
+</div></div>
+
+<div class="wrap">
+
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">Sitio web + una mejora por mes</div>
+      <h1>La consulta entró por WhatsApp <em>y nadie la contó.</em></h1>
+      <p class="lede">Le armamos a tu estudio un sitio profesional en 15 días. Después, todos los meses, implementamos una mejora concreta sobre él. No adivinamos: miramos qué hace la gente que entra y dónde se va.</p>
+      <p class="firma">Diagnóstico inicial sin costo · Respuesta en el día</p>
+    </div>
+    <div class="panel">
+      <div class="ph">Cómo arranca</div>
+      <ol>
+        <li><div><strong>Miramos lo que tenés hoy</strong><span>Tu sitio actual, de dónde llegan las consultas y cuántas se están perdiendo.</span></div></li>
+        <li><div><strong>Te decimos si tiene sentido</strong><span>Si tu estudio no tiene tráfico suficiente, te lo decimos en esa misma llamada.</span></div></li>
+        <li><div><strong>Plan concreto</strong><span>Qué plantilla, qué plan mensual y cómo vamos a medir si funciona.</span></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">La implementación</div>
+    <h2>Elegís una plantilla y la convertimos en el sitio de tu estudio.</h2>
+    <p>Trabajamos sobre una biblioteca de diseños pensados para estudios jurídicos. Eso nos saca meses de encima y a vos te saca el proyecto eterno que nunca se termina.</p>
+  </div>
+
+  <div class="pasos">
+    <div class="paso"><div class="n">01</div><h3>Reunión de brief</h3><p>Una hora. Qué hace el estudio, en qué fueros trabaja, a quién quiere atraer.</p></div>
+    <div class="paso"><div class="n">02</div><h3>Elegís el diseño</h3><p>Te mostramos las plantillas disponibles con vista previa real y elegís la que va.</p></div>
+    <div class="paso"><div class="n">03</div><h3>Armado y ajustes</h3><p>Lo armamos con tu contenido y te mandamos el link. Dos rondas de cambios incluidas.</p></div>
+    <div class="paso"><div class="n">04</div><h3>Entrega</h3><p>Una hora para publicarlo en tu dominio, dejarlo midiendo y mostrarte cómo se usa.</p></div>
+  </div>
+
+  <div class="precio-impl">
+    <div><div class="big num">$290.000</div><div class="et">Implementación · pago único</div></div>
+    <div class="cond">Se abona en dos partes: 50% al iniciar y 50% contra entrega, a los 15 días. Incluye el sitio, la carga de contenido, el dominio conectado, los formularios funcionando y la medición instalada.</div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">Planes mensuales</div>
+    <h2>Después de la entrega, elegís cuánto nos movemos cada mes.</h2>
+    <p>Todos los planes incluyen hosting, backups, actualizaciones de seguridad y soporte. La diferencia está en cuántas mejoras implementamos sobre el sitio y qué visibilidad tenés de lo que pasa.</p>
+  </div>
+
+  <div class="planes">
+    <div class="plan">
+      <div><div class="tag">Mantenimiento</div><h3>Basic</h3></div>
+      <div><div class="precio num">$50.000</div><div class="periodo">por mes</div></div>
+      <div class="mejoras">Sin mejoras mensuales</div>
+      <ul>
+        <li>Hosting, dominio y certificado</li>
+        <li>Backups y actualizaciones de seguridad</li>
+        <li>Soporte ante incidentes</li>
+        <li>Almacenamiento de documentos</li>
+        <li class="no">Tablero de indicadores</li>
+      </ul>
+    </div>
+
+    <div class="plan">
+      <div><div class="tag">Para empezar</div><h3>Avanzado</h3></div>
+      <div><div class="precio num">$250.000</div><div class="periodo">por mes</div></div>
+      <div class="mejoras">1 mejora por mes</div>
+      <ul>
+        <li>Todo lo del plan Basic</li>
+        <li>Una mejora mensual sobre el sitio, elegida mirando el comportamiento real de las visitas</li>
+        <li>Tablero con las consultas del mes, de dónde vienen y dónde abandonan</li>
+        <li>Informe mensual con la hipótesis de cada cambio</li>
+      </ul>
+    </div>
+
+    <div class="plan destacado">
+      <div><div class="tag">Recomendado</div><h3>Premium</h3></div>
+      <div><div class="precio num">$400.000</div><div class="periodo">por mes</div></div>
+      <div class="mejoras">2 mejoras por mes</div>
+      <ul>
+        <li>Todo lo del plan Avanzado</li>
+        <li>Dos mejoras mensuales, con lectura de qué cambió entre una y otra</li>
+        <li>Comparación trimestral contra la línea de base de consultas</li>
+        <li>Grabaciones reales de visitas que muestran dónde se traba el contacto</li>
+      </ul>
+    </div>
+
+    <div class="plan">
+      <div><div class="tag">Con acompañamiento</div><h3>VIP</h3></div>
+      <div><div class="precio num">$750.000</div><div class="periodo">por mes</div></div>
+      <div class="mejoras">4 mejoras por mes</div>
+      <ul>
+        <li>Todo lo del plan Premium</li>
+        <li>Cuatro mejoras mensuales</li>
+        <li>Una hora por mes con un especialista en ventas digitales para definir prioridades</li>
+        <li>Revisión del circuito comercial completo, no solo del sitio</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="nota-precios">Precios en pesos, actualizados cada tres meses por el IPC que publica el INDEC, con aviso por escrito 15 días antes. Contrato mínimo de seis meses: es el tiempo que tarda en verse si el sitio mueve la aguja. Se puede subir o bajar de plan mes a mes. Los precios son netos de impuestos.</p>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">Cómo lo medimos</div>
+    <h2>Un sitio de estudio no tiene tráfico de supermercado. Por eso medimos distinto.</h2>
+  </div>
+
+  <div class="medicion">
+    <ol class="protocolo">
+      <li><div><strong>Definimos qué es una consulta</strong><span>Tres cosas: el formulario enviado, el click a WhatsApp y el click al teléfono. Si no se miden las tres, el número no sirve.</span></div></li>
+      <li><div><strong>Tomamos tres meses de línea de base</strong><span>Antes de prometer nada. Si el sitio es nuevo, los primeros tres meses son la referencia.</span></div></li>
+      <li><div><strong>Cada mejora lleva una hipótesis escrita</strong><span>Qué vimos, qué cambiamos y qué esperamos. Escrita antes de tocar el sitio, no después.</span></div></li>
+      <li><div><strong>Comparamos tres meses contra tres</strong><span>En cantidad de consultas, no en porcentajes. Es el número que podés chequear vos.</span></div></li>
+      <li><div><strong>Mostramos grabaciones, no solo planillas</strong><span>Dos o tres visitas reales donde se ve el problema que la mejora resolvió.</span></div></li>
+    </ol>
+
+    <div class="nopro">
+      <h3>Lo que no te vamos a prometer</h3>
+      <p>Ningún proveedor serio puede garantizarte que tu conversión sube un porcentaje determinado. Con el tráfico que tiene el sitio de un estudio, ese número tardaría más de un año en ser estadísticamente válido.</p>
+      <p>Lo que sí hacemos es implementar mejoras basadas en datos reales y mostrarte, en cantidad de consultas, qué pasó antes y después. En cada informe dejamos escrito qué otros factores pueden estar influyendo.</p>
+      <span class="lim">Preferimos decirlo ahora</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">Qué plan te conviene</div>
+    <h2>Depende de cuánta gente llega hoy a tu sitio.</h2>
+    <p>En la primera reunión miramos juntos el tráfico que tenés. Si no alcanza para que las mejoras se noten, te lo decimos y arrancamos por el plan que corresponde.</p>
+  </div>
+
+  <div class="perfiles">
+    <div class="perfil">
+      <div class="rec">Premium o VIP</div>
+      <h3>Estudios que ya invierten en publicidad</h3>
+      <p>Previsional y reajustes jubilatorios, accidentes y daños, ciudadanías y migraciones. Hay volumen suficiente para que cada mejora se note y se pueda medir mes a mes.</p>
+    </div>
+    <div class="perfil">
+      <div class="rec">Avanzado</div>
+      <h3>Estudios con consulta constante</h3>
+      <p>Laboral del lado del trabajador, defensa del consumidor, familia y sucesiones. Una mejora por mes, con el tablero para ver de dónde llega cada consulta.</p>
+    </div>
+    <div class="perfil">
+      <div class="rec">Basic</div>
+      <h3>Estudios que necesitan presencia</h3>
+      <p>Corporativo, tributario, penal. El cliente llega por recomendación: el sitio tiene que estar impecable y actualizado, no hace falta más que eso.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="cierre-box">
+    <div>
+      <h2>Empecemos por mirar <em>tu sitio actual.</em></h2>
+      <p>Una llamada de 20 minutos. Revisamos qué tenés hoy, cuántas consultas estás recibiendo y si este modelo tiene sentido para tu estudio. Si no lo tiene, te lo decimos en esa misma llamada.</p>
+    </div>
+    <div class="contacto">
+      <a class="pill" href="https://wa.me/5493624850109" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+      <div class="dato"><div class="et">WhatsApp</div><div class="val num">+54 9 362 485-0109</div></div>
+      <div class="dato"><div class="et">Email</div><div class="val">contacto@naveo.ar</div></div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<footer><div class="wrap">
+  <span>Naveo · Agencia Digital · Resistencia, Chaco</span>
+  <span>Precios vigentes a octubre 2026</span>
+</div></footer>
+</body>
+</html>
