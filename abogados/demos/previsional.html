@@ -54,6 +54,13 @@ header .w{display:flex;align-items:center;justify-content:space-between;gap:14px
 .radios input{position:absolute;opacity:0;width:0}
 .radios input:checked + span{font-weight:700;color:var(--azul2)}
 .radios label:has(input:checked){border-color:var(--azul2);background:#F0F4FB;box-shadow:inset 0 0 0 1px var(--azul2)}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+@media(max-width:560px){.dos{grid-template-columns:1fr}}
+.campo .hint{font-size:13px;color:#6B7585;font-weight:400;margin-left:5px}
+.mal input{border-color:#B3261E;background:#FDF4F3}
+.err{display:none;font-size:13.5px;color:#B3261E;margin-top:5px}
+.mal .err{display:block}
+.sep{margin-top:22px;padding-top:20px;border-top:1px solid var(--linea)}
 .btn{display:block;width:100%;margin-top:22px;background:var(--ambar);color:#16233A;border:none;
   border-radius:7px;padding:15px;font-size:17.5px;font-weight:700;font-family:var(--s);cursor:pointer}
 .btn:hover{filter:brightness(1.06)}
@@ -105,7 +112,7 @@ footer b{color:#fff;font-family:var(--t);font-size:18px}
   </div>
   <form class="form-card" id="consulta" novalidate>
     <h2>Revisá si te corresponde</h2>
-    <p class="sub">Tres datos y te decimos si tu caso tiene sustento.</p>
+    <p class="sub">Contanos tu situación y un abogado del estudio te responde dentro de las 48 horas.</p>
     <div class="campo">
       <label for="anio">¿En qué año te jubilaste?</label>
       <select id="anio"><option value="">Elegí una opción</option>
@@ -127,9 +134,23 @@ footer b{color:#fff;font-family:var(--t);font-size:18px}
         <label><input type="radio" name="rec" checked><span>No</span></label>
       </div>
     </div>
+    <div class="campo sep dos">
+      <div>
+        <label for="mail">Tu email</label>
+        <input id="mail" name="email" type="email" inputmode="email" autocomplete="email"
+               placeholder="nombre@correo.com" required>
+        <div class="err" id="err-mail">Escribí un email válido para poder responderte.</div>
+      </div>
+      <div>
+        <label for="cel">Tu celular <span class="hint">con WhatsApp</span></label>
+        <input id="cel" name="telefono" type="tel" inputmode="tel" autocomplete="tel"
+               placeholder="11 2345-6789" required>
+        <div class="err" id="err-cel">Dejanos un celular de al menos 8 dígitos.</div>
+      </div>
+    </div>
     <button class="btn" type="submit">Ver si corresponde reclamar</button>
     <div class="res" id="res" hidden></div>
-    <p class="aviso">Al enviar, un abogado del estudio se comunica dentro de las 48 horas hábiles. No asumís ningún compromiso.</p>
+    <p class="aviso">Usamos tu email y tu celular solo para responderte esta consulta. Un abogado del estudio se comunica dentro de las 48 horas hábiles y no asumís ningún compromiso.</p>
   </form>
 </div></div></div>
 
@@ -163,9 +184,19 @@ footer b{color:#fff;font-family:var(--t);font-size:18px}
 <script>
 document.getElementById('consulta').addEventListener('submit',function(e){
   e.preventDefault();
+  var mail=document.getElementById('mail'), cel=document.getElementById('cel');
+  var okMail=/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(mail.value.trim());
+  var okCel=(cel.value.replace(/\D/g,'').length>=8);
+  mail.parentElement.classList.toggle('mal',!okMail);
+  cel.parentElement.classList.toggle('mal',!okCel);
+  if(!okMail){mail.focus();return;}
+  if(!okCel){cel.focus();return;}
   var r=document.getElementById('res');
-  r.innerHTML='<b>Tu caso amerita una revisión.</b> Con los datos que cargaste, conviene pedir el expediente a ANSES. En el sitio real acá se enviaría la consulta al estudio.';
+  r.innerHTML='<b>Tu caso amerita una revisión.</b> Con los datos que cargaste, conviene pedir el expediente a ANSES. En el sitio real, la consulta llega al estudio con tu email y tu celular, y queda cargada en el CRM.';
   r.hidden=false; r.scrollIntoView({block:'nearest',behavior:'smooth'});
+});
+['mail','cel'].forEach(function(id){
+  document.getElementById(id).addEventListener('input',function(){this.parentElement.classList.remove('mal');});
 });
 </script>
 </body></html>
