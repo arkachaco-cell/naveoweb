@@ -87,6 +87,53 @@ section .int{font-size:18.5px;color:#4C5566;margin-top:13px;max-width:62ch}
 footer{background:var(--azul);color:#B8C3D6;padding-block:34px;font-size:15px}
 footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer b{color:#fff;font-family:var(--t);font-size:18px}
+
+.form-card{--nv-acc:var(--azul2);--nv-t:var(--tinta);--nv-t2:#5A6679;--nv-sup:var(--card);
+  --nv-lin:var(--linea);--nv-lin2:#C9CFD9;--nv-soft:#F0F4FB;--nv-rad:10px;--nv-rad2:7px;
+  --nv-btn:var(--ambar);--nv-btn-t:#16233A}
+/* ===== Captura Naveo · contacto + agenda ===== */
+.nv{background:var(--nv-sup);border:1px solid var(--nv-lin);border-radius:var(--nv-rad);
+  padding:clamp(24px,4vw,40px);display:grid;grid-template-columns:1fr 1.1fr;
+  gap:clamp(24px,4vw,46px);align-items:start}
+@media(max-width:860px){.nv{grid-template-columns:1fr}}
+.nv .nv-sub{margin-top:12px;color:var(--nv-t2);font-size:17px}
+.nv-list{margin-top:20px;display:grid;gap:10px;font-size:15.5px;color:var(--nv-t2)}
+.nv-list span{display:block;padding-left:21px;position:relative}
+.nv-list span::before{content:"";position:absolute;left:0;top:.52em;width:9px;height:9px;
+  border-radius:50%;background:var(--nv-acc);opacity:.5}
+.nv-f{margin-top:16px}
+.nv-f label,.nv-ag .nv-leg{display:block;font-size:14.5px;font-weight:600;margin-bottom:6px}
+.nv-f input{width:100%;padding:12px 13px;border:1px solid var(--nv-lin2);
+  border-radius:var(--nv-rad2);font:inherit;font-size:16.5px;background:#fff;color:var(--nv-t)}
+.nv-f input:focus-visible{outline:2px solid var(--nv-acc);outline-offset:1px}
+.nv-dos{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+@media(max-width:560px){.nv-dos{grid-template-columns:1fr}}
+.nv-hint{font-weight:400;color:var(--nv-t2);font-size:13px;margin-left:5px}
+.nv-err{display:none;font-size:13.5px;color:#B3261E;margin-top:5px}
+.nv-mal input{border-color:#B3261E;background:#FDF4F3}
+.nv-mal .nv-err{display:block}
+.nv-ag{border:0;margin-top:24px;padding:20px 0 0;border-top:1px solid var(--nv-lin)}
+.nv-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.nv-chip{border:1px solid var(--nv-lin2);border-radius:var(--nv-rad2);background:#fff;cursor:pointer;
+  padding:9px 14px;font:inherit;font-size:15px;color:var(--nv-t);line-height:1.3;text-align:center}
+.nv-chip small{display:block;font-size:12.5px;color:var(--nv-t2);text-transform:none;letter-spacing:0}
+.nv-chip[aria-pressed="true"]{border-color:var(--nv-acc);background:var(--nv-soft);
+  box-shadow:inset 0 0 0 1px var(--nv-acc);font-weight:700}
+.nv-chip[aria-pressed="true"] small{color:var(--nv-acc)}
+.nv-ag.nv-off .nv-chips{opacity:.42;pointer-events:none}
+.nv-prefiero{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:var(--nv-t2);
+  cursor:pointer;font-weight:400}
+.nv-prefiero input{margin-top:4px;width:auto;accent-color:var(--nv-acc);flex:none}
+.nv-btn{display:block;width:100%;margin-top:22px;border:0;cursor:pointer;background:var(--nv-btn);
+  color:var(--nv-btn-t);border-radius:var(--nv-rad2);padding:15px;font:inherit;font-size:17.5px;font-weight:700}
+.nv-btn:hover{filter:brightness(1.07)}
+.nv-res{margin-top:18px;padding:16px;border-radius:var(--nv-rad2);border-left:4px solid var(--nv-acc);
+  background:var(--nv-soft);font-size:16px;line-height:1.55}
+.nv-res b{color:var(--nv-acc)}
+.nv-nota{font-size:13.5px;color:var(--nv-t2);margin-top:13px;line-height:1.5}
+.nv-sep{margin-top:24px;padding-top:20px;border-top:1px solid var(--linea)}
+.nv-sep .nv-f:first-child{margin-top:0}
+.form-card .nv-ag{margin-top:20px;border-top:0;padding-top:0}
 </style>
 </head>
 <body>
@@ -112,7 +159,7 @@ footer b{color:#fff;font-family:var(--t);font-size:18px}
   </div>
   <form class="form-card" id="consulta" novalidate>
     <h2>Revisá si te corresponde</h2>
-    <p class="sub">Contanos tu situación y un abogado del estudio te responde dentro de las 48 horas.</p>
+    <p class="sub">Tres preguntas, tus datos y el horario que te sirva. Un abogado del estudio te confirma el turno.</p>
     <div class="campo">
       <label for="anio">¿En qué año te jubilaste?</label>
       <select id="anio"><option value="">Elegí una opción</option>
@@ -134,18 +181,29 @@ footer b{color:#fff;font-family:var(--t);font-size:18px}
         <label><input type="radio" name="rec" checked><span>No</span></label>
       </div>
     </div>
-    <div class="campo sep dos">
-      <div>
-        <label for="mail">Tu email</label>
-        <input id="mail" name="email" type="email" inputmode="email" autocomplete="email"
-               placeholder="nombre@correo.com" required>
-        <div class="err" id="err-mail">Escribí un email válido para poder responderte.</div>
+    <div class="nv-sep">
+      <div class="nv-f">
+        <label for="nv-nom">Nombre y apellido</label>
+        <input id="nv-nom" name="nombre" type="text" autocomplete="name" placeholder="Mar&iacute;a Gonz&aacute;lez" required>
+        <div class="nv-err">Pon&eacute; tu nombre para saber con qui&eacute;n hablamos.</div>
       </div>
-      <div>
-        <label for="cel">Tu celular <span class="hint">con WhatsApp</span></label>
-        <input id="cel" name="telefono" type="tel" inputmode="tel" autocomplete="tel"
-               placeholder="11 2345-6789" required>
-        <div class="err" id="err-cel">Dejanos un celular de al menos 8 dígitos.</div>
+      <div class="nv-dos">
+        <div class="nv-f">
+          <label for="nv-mail">Tu email</label>
+          <input id="nv-mail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="nombre@correo.com" required>
+          <div class="nv-err">Escrib&iacute; un email v&aacute;lido.</div>
+        </div>
+        <div class="nv-f">
+          <label for="nv-cel">Tu celular <span class="nv-hint">con WhatsApp</span></label>
+          <input id="nv-cel" name="telefono" type="tel" inputmode="tel" autocomplete="tel" placeholder="11 2345-6789" required>
+          <div class="nv-err">Dejanos un celular de al menos 8 d&iacute;gitos.</div>
+        </div>
+      </div>
+      <div class="nv-ag" id="nv-ag">
+        <span class="nv-leg">Eleg&iacute; d&iacute;a y horario</span>
+        <div class="nv-chips" id="nv-dias"></div>
+        <div class="nv-chips" id="nv-horas"></div>
+        <label class="nv-prefiero"><input type="checkbox" id="nv-luego"><span>Prefiero que me llamen y coordinamos</span></label>
       </div>
     </div>
     <button class="btn" type="submit">Ver si corresponde reclamar</button>
@@ -182,21 +240,84 @@ footer b{color:#fff;font-family:var(--t);font-size:18px}
 </div></footer>
 
 <script>
+
+(function(){
+  var dias=document.getElementById('nv-dias'), horas=document.getElementById('nv-horas');
+  if(!dias||!horas) return;
+  var luego=document.getElementById('nv-luego'), caja=document.getElementById('nv-ag');
+  var D=['domingo','lunes','martes','miercoles','jueves','viernes','sabado'];
+  var DD=['domingo','lunes','martes','mi\u00e9rcoles','jueves','viernes','s\u00e1bado'];
+  var M=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+  var d=new Date(), n=0;
+  while(n<5){
+    d.setDate(d.getDate()+1);
+    if(d.getDay()===0||d.getDay()===6) continue;
+    var b=document.createElement('button');
+    b.type='button'; b.className='nv-chip'; b.setAttribute('aria-pressed','false');
+    b.dataset.v=DD[d.getDay()]+' '+d.getDate()+' de '+M[d.getMonth()];
+    b.innerHTML=DD[d.getDay()]+'<small>'+d.getDate()+' '+M[d.getMonth()]+'</small>';
+    dias.appendChild(b); n++;
+  }
+  ['9:00','11:00','15:00','17:00'].forEach(function(h){
+    var b=document.createElement('button');
+    b.type='button'; b.className='nv-chip'; b.setAttribute('aria-pressed','false');
+    b.dataset.v=h; b.textContent=h+' hs';
+    horas.appendChild(b);
+  });
+  function elegir(cont){
+    cont.addEventListener('click',function(e){
+      var b=e.target.closest('.nv-chip'); if(!b) return;
+      var ya=b.getAttribute('aria-pressed')==='true';
+      [].forEach.call(cont.querySelectorAll('.nv-chip'),function(x){x.setAttribute('aria-pressed','false');});
+      b.setAttribute('aria-pressed', ya?'false':'true');
+      if(!ya && luego){ luego.checked=false; caja.classList.remove('nv-off'); }
+      caja.classList.remove('nv-mal-ag');
+    });
+  }
+  elegir(dias); elegir(horas);
+  if(luego) luego.addEventListener('change',function(){
+    caja.classList.toggle('nv-off', luego.checked);
+    if(luego.checked){
+      [].forEach.call(caja.querySelectorAll('.nv-chip'),function(x){x.setAttribute('aria-pressed','false');});
+    }
+  });
+  function sel(c){var b=c.querySelector('.nv-chip[aria-pressed="true"]');return b?b.dataset.v:null;}
+  window.nvAgenda={
+    ok:function(){ return (luego&&luego.checked) || (sel(dias)&&sel(horas)); },
+    llaman:function(){ return !!(luego&&luego.checked); },
+    texto:function(){ var a=sel(dias), b=sel(horas); return a&&b ? (a+' a las '+b+' hs') : null; }
+  };
+})();
+function nvValidar(ids){
+  var ok=true, foco=null;
+  ids.forEach(function(id){
+    var el=document.getElementById(id); if(!el) return;
+    var v=el.value.trim(), bien;
+    if(el.type==='email') bien=/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(v);
+    else if(el.type==='tel') bien=v.replace(/\D/g,'').length>=8;
+    else bien=v.length>=2;
+    el.closest('.nv-f').classList.toggle('nv-mal',!bien);
+    if(!bien){ ok=false; if(!foco) foco=el; }
+  });
+  if(foco) foco.focus();
+  return ok;
+}
+document.addEventListener('input',function(e){
+  var c=e.target.closest&&e.target.closest('.nv-f.nv-mal');
+  if(c) c.classList.remove('nv-mal');
+});
 document.getElementById('consulta').addEventListener('submit',function(e){
   e.preventDefault();
-  var mail=document.getElementById('mail'), cel=document.getElementById('cel');
-  var okMail=/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(mail.value.trim());
-  var okCel=(cel.value.replace(/\D/g,'').length>=8);
-  mail.parentElement.classList.toggle('mal',!okMail);
-  cel.parentElement.classList.toggle('mal',!okCel);
-  if(!okMail){mail.focus();return;}
-  if(!okCel){cel.focus();return;}
+  if(!nvValidar(['nv-nom','nv-mail','nv-cel'])) return;
+  var ag=document.getElementById('nv-ag');
+  if(!window.nvAgenda.ok()){ ag.scrollIntoView({block:'center',behavior:'smooth'});
+    document.getElementById('nv-dias').querySelector('.nv-chip').focus(); return; }
   var r=document.getElementById('res');
-  r.innerHTML='<b>Tu caso amerita una revisión.</b> Con los datos que cargaste, conviene pedir el expediente a ANSES. En el sitio real, la consulta llega al estudio con tu email y tu celular, y queda cargada en el CRM.';
+  var nom=document.getElementById('nv-nom').value.trim().split(' ')[0];
+  r.innerHTML = window.nvAgenda.llaman()
+    ? '<b>Listo, '+nom+'.</b> Un abogado del estudio te llama dentro de las 48 horas h\u00e1biles para pedir tu expediente a ANSES. En el sitio real, el contacto queda cargado en el CRM con tu email y tu celular.'
+    : '<b>Turno reservado para el '+window.nvAgenda.texto()+'.</b> Con los datos que cargaste, conviene pedir el expediente a ANSES. En el sitio real, la reuni\u00f3n se crea en el Google Calendar del estudio y el contacto queda cargado en el CRM.';
   r.hidden=false; r.scrollIntoView({block:'nearest',behavior:'smooth'});
-});
-['mail','cel'].forEach(function(id){
-  document.getElementById(id).addEventListener('input',function(){this.parentElement.classList.remove('mal');});
 });
 </script>
 </body></html>
